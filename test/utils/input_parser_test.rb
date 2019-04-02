@@ -30,9 +30,5 @@ class Utils::InputParserTest < Minitest::Test
           "100"
       end
     end
-
-    def new_instance(input = "")
-      Utils::InputParser.new(input_string: input)
-    end
   end
 end
