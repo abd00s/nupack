@@ -48,7 +48,7 @@ module Nupack
     end
 
     def category_rate
-      @category_rate ||= CategoryRate.new(category_name: category).calculate
+      @category_rate ||= CategoryRate.calculate(category_name: category)
     end
   end
 end
