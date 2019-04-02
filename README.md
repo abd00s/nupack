@@ -6,6 +6,7 @@ My implementation of a Nulogy programming exercise. Here is a link to the [exerc
 * Main program input is a single argument; a comma separated string containing three order-dependent input parameters.
 * Spec suite written in Ruby's MiniTest.
 * This exercise is a demonstartion of the use of various programming idioms and how I would organize a project directory.
+* Run the spec suite with `rake`.
 
 
 ###### Main program output
