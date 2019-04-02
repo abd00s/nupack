@@ -11,12 +11,23 @@ module Utils
     end
 
     def parse
+      raise invalid_input_error unless valid_input?
+
       @price            = parsed_price
       @number_of_people = parsed_number_of_people
       @category         = parsed_category
     end
 
     private
+
+    def valid_input?
+      split_input.size == 3
+    end
+
+    def invalid_input_error
+      raise ArgumentError,
+            "ensure input is in format '$###, # people|person, category'"
+    end
 
     def parsed_price
       @parsed_price ||= strip_non_numerical_characters(price_input).to_f
