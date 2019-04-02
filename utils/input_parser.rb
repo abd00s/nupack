@@ -2,12 +2,12 @@ module Utils
   class InputParser
     attr_reader :price, :number_of_people, :category
 
-    def initialize(input_string:)
-      @input_string = input_string
-    end
-
     def self.run(input_string:)
       new(input_string: input_string).tap(&:parse)
+    end
+
+    def initialize(input_string:)
+      @input_string = input_string
     end
 
     def parse

@@ -3,12 +3,12 @@ require "./utils/input_parser"
 require "./utils/currency_formatter"
 
 class Main
-  def initialize(args = {})
-    @input = args[:input]
+  def self.run(input:)
+    new(input: input).run
   end
 
-  def self.run(args = {})
-    new(args).run
+  def initialize(input:)
+    @input = input
   end
 
   def run

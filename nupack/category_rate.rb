@@ -1,7 +1,7 @@
 module Nupack
   class CategoryRate
-    def initialize(args = {})
-      @category_name = args[:category_name]
+    def initialize(category_name:)
+      @category_name = category_name
     end
 
     def calculate

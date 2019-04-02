@@ -1,16 +1,18 @@
 module Utils
   class CurrencyFormatter
-    def initialize(price:)
-      @price = price
-    end
-
     def self.run(price:)
       new(price: price).format_currency
+    end
+
+    def initialize(price:)
+      @price = price
     end
 
     def format_currency
       "$#{total_with_thousands_comma_separators}"
     end
+
+    private
 
     def total_with_thousands_comma_separators
       @total_with_thousands_comma_separators ||=

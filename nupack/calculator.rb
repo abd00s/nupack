@@ -3,14 +3,14 @@ require "./nupack/category_rate"
 
 module Nupack
   class Calculator
+    def self.run(args = {})
+      new(args).rounded_total
+    end
+
     def initialize(args = {})
       @price            = args[:price]
       @number_of_people = args[:number_of_people]
       @category         = args[:category]
-    end
-
-    def self.run(args = {})
-      new(args).rounded_total
     end
 
     def rounded_total
