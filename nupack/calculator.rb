@@ -3,6 +3,8 @@ require "./nupack/category_rate"
 
 module Nupack
   class Calculator
+    attr_reader :price, :number_of_people, :category
+
     def self.run(args = {})
       new(args).rounded_total
     end
@@ -24,11 +26,11 @@ module Nupack
     end
 
     def flat_marked_up_base_price
-      @flat_marked_up_base_price ||= @price + flat_markup
+      @flat_marked_up_base_price ||= price + flat_markup
     end
 
     def flat_markup
-      @flat_markup ||= @price * MarkupRates::FLAT
+      @flat_markup ||= price * MarkupRates::FLAT
     end
 
     def labor_markup
@@ -36,7 +38,7 @@ module Nupack
     end
 
     def labor_rate
-      @labor_rate ||= @number_of_people * MarkupRates::PER_LABORER
+      @labor_rate ||= number_of_people * MarkupRates::PER_LABORER
     end
 
     def category_markup
@@ -46,7 +48,7 @@ module Nupack
     end
 
     def category_rate
-      @category_rate ||= CategoryRate.new(category_name: @category).calculate
+      @category_rate ||= CategoryRate.new(category_name: category).calculate
     end
   end
 end
