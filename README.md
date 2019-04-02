@@ -11,12 +11,12 @@ My implementation of a Nulogy programming exercise. Here is a link to the [exerc
 ###### Main program output
 
 ```ruby
- Main.run(input: "$1,299.99, 3 people, food")
+Main.run(input: "$1,299.99, 3 people, food")
  # =>"$1,591.58"
 
 Main.run(input: "$5,432.00, 1 person, drugs")
 # => "$6,199.81"
 
- Main.run(input: "$12,456.95, 4 people, books")
+Main.run(input: "$12,456.95, 4 people, books")
  # => "$13,707.63"
 ```
