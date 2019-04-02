@@ -18,7 +18,8 @@ class Main
   private
 
   def formatted_output
-    Utils::CurrencyFormatter.run(price: total_marked_up_price)
+    @formatted_output ||=
+      Utils::CurrencyFormatter.run(price: total_marked_up_price)
   end
 
   def total_marked_up_price
